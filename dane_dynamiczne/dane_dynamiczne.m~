@@ -111,21 +111,21 @@ function [W, err, err_v] = model_z_rekurencja(W, u, y, u_v, y_v, n)
     err_v = error(y_mod_valid, y_v(n+1:k));
     err = error(y_mod_train, y(n+1:k));
     
-    plot(y_mod_valid);
+    plot(Y_mod_valid);
     hold on;
     plot(y_v);
     xlabel('k');
     ylabel('y');
     legend('y modelu', 'y danych');
-    print('-dpng', ['model_rek_walid_', num2str(n), '.png']);
+    print('-dpng', ['model_bez_rek_walid_', num2str(n), '.png']);
     hold off;
     
-    plot(y_mod_train);
+    plot(Y_mod);
     hold on;
     plot(y);
     xlabel('k');
     ylabel('y');
     legend('y modelu', 'y danych');
-    print('-dpng', ['model_rek_train_', num2str(n), '.png']);
+    print('-dpng', ['model_bez_rek_train_', num2str(n), '.png']);
     hold off;
 end
